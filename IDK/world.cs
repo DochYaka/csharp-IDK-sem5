@@ -1,7 +1,6 @@
-﻿// Console.WriteLine("Hello, World!");
+﻿Player player = new Player(name: "Gideon", health: new Health());
 
-// Player player = new Player(name: "Gideon", health: new Health()); 
-// player.Print();
+Cigarette cigarette = new LongCigarette(range: 10, shotSpeed: 5, 
+    smoke: new PoisonSmoke(periodicDamage: 5, spreading: 1, damage: 10));
 
-
-// player.Print();
+player.Inspect(cigarette);

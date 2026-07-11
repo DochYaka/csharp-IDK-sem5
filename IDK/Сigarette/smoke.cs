@@ -24,11 +24,21 @@ public class HealingSmoke : Smoke, IOnYourself
 
     public bool OnYourself { get; set; } = true;
 
-    public HealingSmoke(int healing, bool onYourself, double damage = 0) : base(damage)
+    public HealingSmoke(int healing, double damage = 0) : base(damage)
     {
         _healing = healing;
-        
-        OnYourself = onYourself;
+    }
+}
+
+public class StrengthSmoke : Smoke, IOnYourself
+{
+    public Gain _strenghGain;
+
+    public bool OnYourself { get; set; } = true;
+
+    public StrengthSmoke(Gain strenghGain, double damage = 0) : base(damage)
+    {
+        _strenghGain = strenghGain;
     }
 }
 

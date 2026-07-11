@@ -45,7 +45,11 @@ public class Player
         double shotSpeed = cigarette._shotSpeed;
         Smoke smoke = cigarette._smoke;
 
-        //дописать визуальный осмотр
+        Console.WriteLine($"   Тип: {cigarette.GetTypeName()}");
+        Console.WriteLine($"   📏 Дальность: {cigarette._range}");
+        Console.WriteLine($"   💨 Скорость: {cigarette._shotSpeed}");
+        Console.WriteLine($"   🚬 Дым: {cigarette._smoke?.GetType().Name ?? "Отсутствует"}");
+        Console.WriteLine($"   ✨ Особенность: {cigarette.GetSpecialFeature()}");
     }
 
     public void Print()

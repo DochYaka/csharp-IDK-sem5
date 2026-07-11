@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("csharp-IDK-sem5")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecdfa1f1f24f0e9cd416884b331e3104bd06ba3b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+514c3939e55812c2511e4e172e2bc654a842f786")]
 [assembly: System.Reflection.AssemblyProductAttribute("csharp-IDK-sem5")]
 [assembly: System.Reflection.AssemblyTitleAttribute("csharp-IDK-sem5")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

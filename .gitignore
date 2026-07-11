@@ -1,3 +1,31 @@
-bin,
-obj,
-csharp-IDK-sem5.csproj,
+# Папки сборок
+bin/
+obj/
+publish/
+
+# Файлы сборок
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+
+# Папки зависимостей
+packages/
+node_modules/
+
+# Файлы пользователя
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Файлы логов
+*.log
+*.cache
+*.tmp
+
+# Visual Studio
+.vs/
+.vscode/
+*.csproj.user

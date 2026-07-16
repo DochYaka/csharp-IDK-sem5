@@ -3,11 +3,15 @@ public interface ICigarette
     
 }
 
-public abstract class Cigarette
+public abstract class Cigarette : IItem
 {
     public int _range;
     public double _shotSpeed;
     public Smoke _smoke;
+
+    public string _name { get; set; }
+    public int _count { get; set; }
+    public bool _usable { get; set; }
 
     public virtual string GetTypeName() => "Обычная сигарета";
     public virtual string GetShotSpeed() => _shotSpeed.ToString();

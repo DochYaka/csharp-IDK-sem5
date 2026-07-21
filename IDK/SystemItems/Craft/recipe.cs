@@ -1,27 +1,32 @@
 public class Recipe
-{    
-    private Dictionary<string, IItem> _recipes = new();
+{
+    public string _name;
+    private List<Ingredient> _ingredients;
+    public int _createTime;
+    public IItem _result;
 
-    public Recipe()
+    public Recipe(string name, List<Ingredient> ingredients, int createTime, IItem result)
     {
-       InitializeRecipes();
+        _name = name;
+        _ingredients = ingredients;
+        _createTime = createTime;
+        _result = result;
     }
 
-    private void InitializeRecipes()
+    public List<Ingredient> GetIngredients()
     {
-        AddRecipe("Взрывная вода", 
-            new List<string> { "Вода", "Порох" },
-            new Ingredient("Взрывная вода", 1, true, "Враньё, не взрывается!"));
+        foreach (var ing in _ingredients)
+        {
+            Console.WriteLine($"{ing}, {ing._count}");
+        }
+
+        return _ingredients;
     }
 
-    public void AddRecipe(string name, List<string> ingredients, IItem result)
+    public override string ToString()
     {
-        var key = $"{name} ({string.Join(", ", ingredients)})";
-        _recipes[key] = result;
-    }
-    
-    public void GetIngredients()
-    {
+        string ingredients = string.Join(", ", _ingredients);
         
+        return $"Рецепт: {_name}, [{ingredients}], Время создания: {_createTime}";
     }
 }

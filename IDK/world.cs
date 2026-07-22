@@ -5,6 +5,8 @@
 
 // player.Inspect(cigarette);
 
+using System.ComponentModel.DataAnnotations;
+
 Ingredient powder = 
     new Ingredient("Порох", 1, true, "Чёрный, взрывоопасный");
 
@@ -32,9 +34,11 @@ RecipeBook recipeBook = new RecipeBook();
 
 recipeBook.AddRecipe(recipe1);
 
-// recipeBook.CheckRecipe();
-
 var boomwater = recipeBook.CheckRecipe("Взрывная вода");
 
 Craft craft = new Craft(recipeBook, inventory);
 craft.craft("Взрывная вода");
+
+inventory.CheckInventory();
+Console.WriteLine("-----------------");
+inventory.CheckInventory();

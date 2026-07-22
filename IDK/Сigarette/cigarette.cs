@@ -9,7 +9,7 @@ public abstract class Cigarette : IItem
     public double _shotSpeed;
     public Smoke _smoke;
 
-    public string _name { get; set; }
+    public string _name { get; set; } = "";
     public int _count { get; set; }
     public bool _usable { get; set; }
 

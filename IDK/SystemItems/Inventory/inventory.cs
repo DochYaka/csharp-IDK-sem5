@@ -12,17 +12,24 @@ public class Inventory
         items.Add(item);
     }
 
-    // public void RemoveItem(IItem item)
-    // {
-    //     if (items.Contains(item))
-    //     {
-    //         items.Remove(item);
-    //     }
-    //     else
-    //     {
+    public void RemoveItem(string itemName)
+    {   
+        if (itemName == null)
+            return;
             
-    //     }
-    // }
+        foreach (var item in items)
+        {
+            if (item._name == itemName)
+            {
+                items.Remove(item);
+                break;
+            }
+            else
+            {
+                
+            }
+        }
+    }
 
     public ObservableCollection<IItem> GetItems()
     {

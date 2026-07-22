@@ -23,12 +23,8 @@ public class RecipeBook
         }
         else
         {
-            return null;   
-        }
-
-        foreach (var rec in _recipes)
-        {
-            Console.WriteLine($"{rec.Key}, {rec.Value}");
+            Console.WriteLine($"Рецепт '{recipe}' не найден!");
+            throw new KeyNotFoundException($"Рецепт '{recipe}' не найден в книге рецептов!");  
         }
     }
     

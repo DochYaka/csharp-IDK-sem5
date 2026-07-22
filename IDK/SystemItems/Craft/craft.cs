@@ -2,28 +2,29 @@ using System.Collections.ObjectModel;
 
 public class Craft
 {
-    public RecipeBook _recipes { get; protected set; }
-    public Inventory inventory { get; protected set; }
+    public RecipeBook Recipes { get; protected set; }
+    public Inventory Inventory { get; protected set; }
 
-    public Craft(RecipeBook recipeBook, Inventory inventory)
+    public Craft(RecipeBook recipeBook, Inventory Inventory)
     {
-        _recipes = recipeBook;
-        this.inventory = inventory;
+        Recipes = recipeBook;
+        this.Inventory = Inventory;
     }
 
     public void craft(string craft)
     {
-        Recipe recipe = _recipes.CheckRecipe(craft);
+        Recipe recipe = Recipes.CheckRecipe(craft);
         var ingredients = recipe.GetIngredients();
 
-        var items = inventory.GetItems();
+        var items = Inventory.GetItems();
 
-        if (checkItems(ingredients, items) == true)
+        if (checkItems(ingredients, items, Inventory) == true)
         {
-            foreach (var ing in ingredients)
-            {
-                items.Remove(ing);
-            }
+            IItem result = recipe._result;
+
+            Item res = new Item(result._name, result._count, result._usable);
+
+            Inventory.AddItem(res);
         }
         else
         {
@@ -32,8 +33,10 @@ public class Craft
 
     }
     
-    private bool checkItems(List<Ingredient> ingredients, ObservableCollection<IItem> items)
+    private bool checkItems(List<Ingredient> ingredients, ObservableCollection<IItem> items, Inventory Inventory)
     {
+        List<IItem> itemsToRemove = new List<IItem>();
+
         foreach (var ing in ingredients)
         {
             bool found = false;
@@ -42,7 +45,8 @@ public class Craft
                 if (item._name == ing._name && item._count >= ing._count)
                 {
                     found = true;
-                    Console.WriteLine($"{ing._name} есть");
+
+                    itemsToRemove.Add(item);
                     break;
                 }
             }
@@ -53,6 +57,10 @@ public class Craft
                 return false;
             }
         }
+
+        foreach (var item in itemsToRemove)
+            Inventory.RemoveItem(item._name); 
+
         return true;
     }
 
